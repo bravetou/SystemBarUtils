@@ -1,36 +1,47 @@
 # SystemBarUtils
-
-#### Description
-Android SystemBar Utils
-
-#### Software Architecture
-Software architecture description
-
-#### Installation
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+---
+Android toolbar
 
 
-#### Gitee Feature
+# Dependency
+---
+```groovy
+	dependencies {
+		implementation 'com.brave.system.bar:library:1.0.1'
+	}
+```
 
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+# use
+---
+
+ 1. Transparent
+
+```java
+    BarUtils.setTransparent(this);
+```
+
+ 2. Transparent
+
+```java
+	BarUtils.setTransparent(this);
+```
+
+ 3. set colors
+
+```java
+	BarUtils.setSystemBarColor(this, Color.BLUE);
+```
+
+4. Other
+
+```java
+	BarUtils.setSystemBarColor(Window, View, boolean, boolean, boolean, boolean, boolean, boolean, int, int)
+```
+
+# notice
+    
+- BarUtils StatusBarUtils NavBarUtils have three types of mutual exclusion and can only be used one of them
+- BarUtils status bar and virtual button bar will be changed together
+- StatusBarUtils only changes the status bar
+- NavBarUtils only changes the virtual button bar

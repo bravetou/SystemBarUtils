@@ -1,6 +1,7 @@
 package com.brave.system.bar.library;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.View;
 import android.view.Window;
 
@@ -143,5 +144,65 @@ public final class NavBarUtils {
         setColor(activity,
                 false,
                 color);
+    }
+
+    /**
+     * 设置虚拟按键栏半透明
+     */
+    public static final void setTranslucent(@NonNull Window window,
+                                            @NonNull View rootView) {
+        BarUtils.setSystemBarColor(window,
+                rootView,
+                false,
+                true,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                112);
+    }
+
+    /**
+     * 设置虚拟按键栏半透明
+     */
+    public static final void setTranslucent(@NonNull Activity activity) {
+        BarUtils.setSystemBarColor(activity,
+                false,
+                true,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                112);
+    }
+
+    /**
+     * 设置虚拟按键栏透明
+     */
+    public static final void setTransparent(@NonNull Window window,
+                                            @NonNull View rootView) {
+        BarUtils.setSystemBarColor(window,
+                rootView,
+                false,
+                true,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                0);
+    }
+
+    /**
+     * 设置虚拟按键栏透明
+     */
+    public static final void setTransparent(@NonNull Activity activity) {
+        BarUtils.setSystemBarColor(activity,
+                false,
+                true,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                0);
     }
 }

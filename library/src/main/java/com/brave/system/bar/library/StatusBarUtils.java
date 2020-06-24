@@ -1,6 +1,7 @@
 package com.brave.system.bar.library;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.View;
 import android.view.Window;
 
@@ -28,7 +29,7 @@ public final class StatusBarUtils {
      * @param window           窗口
      * @param rootView         根布局
      * @param isBlack          深色字体
-     * @param fitSystemWindows 系统栏占位
+     * @param fitSystemWindows 状态栏占位
      * @param clipToPadding    子View不能展示在Padding区域
      * @param color            颜色
      * @param alpha            透明度[0,255]，值越小越透明
@@ -93,7 +94,7 @@ public final class StatusBarUtils {
      *
      * @param activity         活动
      * @param isBlack          深色字体
-     * @param fitSystemWindows 系统栏占位
+     * @param fitSystemWindows 状态栏占位
      * @param clipToPadding    子View不能展示在Padding区域
      * @param color            颜色
      * @param alpha            透明度[0,255]，值越小越透明
@@ -143,5 +144,65 @@ public final class StatusBarUtils {
         setColor(activity,
                 false,
                 color);
+    }
+
+    /**
+     * 设置状态栏半透明
+     */
+    public static final void setTranslucent(@NonNull Window window,
+                                            @NonNull View rootView) {
+        BarUtils.setSystemBarColor(window,
+                rootView,
+                true,
+                false,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                112);
+    }
+
+    /**
+     * 设置状态栏半透明
+     */
+    public static final void setTranslucent(@NonNull Activity activity) {
+        BarUtils.setSystemBarColor(activity,
+                true,
+                false,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                112);
+    }
+
+    /**
+     * 设置状态栏透明
+     */
+    public static final void setTransparent(@NonNull Window window,
+                                            @NonNull View rootView) {
+        BarUtils.setSystemBarColor(window,
+                rootView,
+                true,
+                false,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                0);
+    }
+
+    /**
+     * 设置状态栏透明
+     */
+    public static final void setTransparent(@NonNull Activity activity) {
+        BarUtils.setSystemBarColor(activity,
+                true,
+                false,
+                false,
+                true,
+                true,
+                Color.BLACK,
+                0);
     }
 }

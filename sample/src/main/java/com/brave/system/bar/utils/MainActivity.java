@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.brave.system.bar.library.BarUtils;
+import com.brave.system.bar.library.NavBarUtils;
+import com.brave.system.bar.library.StatusBarUtils;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
                 true,
                 Color.BLUE,
                 255);
+        BarUtils.setTransparent(this);
+        StatusBarUtils.setTranslucent(this);
+        NavBarUtils.setTranslucent(this);
         setRootView(this);
     }
 
